@@ -1,9 +1,12 @@
 from langchain_ollama import OllamaLLM
-
 from config import OLLAMA_BASE_URL, OLLAMA_MODEL, LLM_TEMPERATURE
+from utils import get_logger
+
+logger = get_logger(__name__)
 
 def inicializar_llm(testar: bool = True) -> OllamaLLM:
     """ Create LLM Agent """
+    logger.info("Conectando ao Ollama em %s (modelo=%s)", OLLAMA_BASE_URL, OLLAMA_MODEL)
     llm = OllamaLLM(
         model=OLLAMA_MODEL,
         base_url=OLLAMA_BASE_URL,
