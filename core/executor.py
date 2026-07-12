@@ -5,7 +5,7 @@ from typing import Optional
 
 from config import COMMAND_TIMEOUT, MAX_OUTPUT_LENGTH, MAX_ERROR_LENGTH
 from utils import get_logger
-from validator import ValidadorComando
+from .validator import ValidadorComando
 
 logger = get_logger(__name__)
 
