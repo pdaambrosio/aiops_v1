@@ -48,29 +48,3 @@ class DecisionMaker:
             return m.group(1) if m else None
 
         return None
-
-# test
-if __name__ == "__main__":
-    dm = DecisionMaker()
-
-    perguntas = [
-        "como está a memória RAM do servidor?",
-        "verifica os logs de erro do container do nginx",
-        "faz um ping em google.com",
-        "o nginx está rodando?",
-        "acesse https://meu-site.com/health",
-        "e aí, tudo certo?",
-    ]
-
-    for pergunta in perguntas:
-        comando, motivo = dm.decidir(pergunta)
-        host = dm.extrair_parametro(pergunta, "host")
-        url = dm.extrair_parametro(pergunta, "url")
-        container = dm.extrair_parametro(pergunta, "container")
-
-        print(f"\nPergunta : {pergunta}")
-        print(f"  comando  : {comando}")
-        print(f"  motivo   : {motivo}")
-        print(f"  host     : {host}")
-        print(f"  url      : {url}")
-        print(f"  container: {container}")

@@ -100,14 +100,3 @@ class ExecutorComando:
 
     def limpar_historico(self) -> None:
         self.historico.clear()
-
-# local test
-if __name__ == "__main__":
-    executor = ExecutorComando()
-
-    resultado_true = executor.executar("uptime")
-    print(resultado_true)
-    print()
-
-    resultado_false = executor.executar("ping", {"host": "google.com; rm -rf /"})
-    print(resultado_false)

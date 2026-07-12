@@ -79,14 +79,3 @@ class ParserResultado:
         if resultado.get("erro"):
             linhas += ["", "stderr:", resultado["erro"]]
         return "\n".join(linhas)
-
-# local test
-if __name__ == "__main__":
-    resultado_do_comando = {
-        "nome_comando": "memoria_livre",
-        "sucesso": True,
-        "tempo_execucao": 10,
-        "output": "Mem: Total: 16GB | Used: 15GB (93%) | Free: 1GB"
-    }
-
-    print(ParserResultado.gerar_sumario(resultado_do_comando))
