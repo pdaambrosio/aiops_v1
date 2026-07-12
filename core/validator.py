@@ -75,18 +75,3 @@ class ValidadorComando:
     # obten informações do comando utilizando via whitelist
     def obter_info(self, nome_comando: str) -> Optional[dict]:
         return COMANDOS_PERMITIDOS.get(nome_comando)
-
-
-# local test
-if __name__ == "__main__":
-    validacao = ValidadorComando()
-    mock_comando_ia_true = {"host": "google.com"}
-    mock_comando_ia_false = {"host": "google.com; rm -rf /"}
-    result_validacao = validacao.validar("ping", mock_comando_ia_true)
-
-    if result_validacao:
-        conf_comando = result_validacao.config
-
-        print(f"True: {conf_comando['comando']}")
-    else:
-        print(f"False: {result_validacao.erro}")
