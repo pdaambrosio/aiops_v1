@@ -11,8 +11,9 @@ TESTS_DIR = PROJECT_ROOT / "tests"
 
 # Model LLM base (local)
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
-OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "mistral")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3.2:latest")
 LLM_TEMPERATURE = float(os.getenv("LLM_TEMPERATURE", "0.3"))
+OLLAMA_NUM_GPU = os.getenv("OLLAMA_NUM_GPU", "8")
 
 # Command executor
 COMMAND_TIMEOUT = int(os.getenv("COMMAND_TIMEOUT", "30"))

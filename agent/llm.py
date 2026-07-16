@@ -1,5 +1,5 @@
 from langchain_ollama import OllamaLLM
-from config import OLLAMA_BASE_URL, OLLAMA_MODEL, LLM_TEMPERATURE
+from config import OLLAMA_BASE_URL, OLLAMA_MODEL, LLM_TEMPERATURE, OLLAMA_NUM_GPU
 from utils import get_logger
 
 logger = get_logger(__name__)
@@ -11,6 +11,7 @@ def inicializar_llm(testar: bool = True) -> OllamaLLM:
         model=OLLAMA_MODEL,
         base_url=OLLAMA_BASE_URL,
         temperature=LLM_TEMPERATURE,
+        num_gpu=OLLAMA_NUM_GPU
     )
 
     if testar:
